@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style2.css">
+
+	<title>Первый ход</title>
+	
+</head>
+
+<body>
+	<div class="sheet">
+		<img src="img/page2/sheet.png" alt="листочек" class="sheet">
+		<div onclick="window.location.href = 'rules.html';" class="rules_button">ПРАВИЛА</div>
+	</div>
+
+	<div class="point">
+		<img src="img/points.png" alt="очки" class="point">
+		<output name="number" class="point"><span id="points">0</span> Баллов</output>
+	</div>
+
+	<div class="bookmark">
+		<img src="img/page2/bookmark.png" alt="закладка" class="bookmark">
+		<div id="level_number" class="level_number">1/14</div>
+	</div>
+	<div class="book">
+		<img src="img/page2/book.png" alt="книга" class="book">
+		<div class="img_hod1">
+			<img id="main_img"src="img/hod/img1.png" alt="Картинка" class="hod1">
+			<!-- Основная картника, для каждого хода хранятся в img/hod/ картинка первого хода img1, 
+			второго хода img2 и тд -->
+		</div>
+		<div class="text img_text_hod1" id="img_text">
+			<!-- Место в которое js вставляет html код из файла img_text, оно хранится в папке levels, 
+			для каждого хода своя папка. -->
+		</div>
+		<div class="text main_text">
+				<p class="p_main_text_annot" id="main_text">
+					<!-- Место в которое js вставляет html код из файла main_text или end_text, оно хранится в папке levels, 
+			для каждого хода своя папка. -->
+				</p>
+		</div>
+
+		<button class="previous_page" onclick="location.href='annotation.html'">
+			<!-- Кнопка назад -->
+			<img src="img/buttons/arrow-right.png" alt="Назад" class="previous_page">
+		</button>
+
+		<button id="show" class="open_dialog">
+			<!-- Кнопка вперёд -->
+			<img src="img/buttons/arrow-left.png" alt="Ответ" class="open_dialog">
+		</button>
+	</div>
+
+
+	<dialog>
+
+		<form name="quiz" action="javascript:check();" class="quizform">
+
+			<img src="img/popup.png" alt="" class="dialog">
+
+			<button id="close" class="close_dialog">
+				<img src="img/buttons/exit-cross.png" alt="закрыть" class="close_dialog">
+			</button>
+
+			<div class=" text dialog">
+				<div class="text">
+			<ol class="dialog__list" id="aswers_list">
+				<!-- Место в которое js вставляет html код из файла answers, оно хранится в папке levels, 
+			для каждого хода своя папка.
+			У каждого вопроса есть своя функция, которую он вызывает при нажатии на него -->
+			</ol>
+			</div>
+				<button class='dialog__answer' id = "give_answer">
+					<img  src="img/buttons/answer-button.png" alt="ответ" class="dialog__answer">
+				</button>
+				<button class='dialog__newgame' id="start_newgame" onclick="location.href='start.html'">
+					<img  src="img/buttons/newgame_button.png" alt="новая игра" class="dialog__newgame">
+				</button>
+			</div>
+
+	</dialog>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+	</script>
+	<script src="js/paste.js"></script>
+	<script src="js/popup.js"></script>
+</body>
+
+</html>
